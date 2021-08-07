@@ -27,7 +27,8 @@
 			  <h4>Increase CPS (Click Per Second)</h4>
 			  <button class='myButton' id='increasecps'>$10000</button>
 			  <br>
-			  <h1>More Coming Soon...</h1>
+			  <h4>Auto Clicker</h4>
+			  <button class='myButton' id='autoclicker'>$100000000</button>
 			  <br>
 			  </center>
 			  </section>
@@ -89,6 +90,7 @@ text-transform: none;
 	  var buy1amount = 50;
 	  var buy2amount = 10000;
 	  var cps = 0;
+	  var autoclicker = false;
 	  var audiooi = new Audio('assets/music/background.mp3');
 audiooi.play();
 	  setInterval(function(){ 
@@ -130,6 +132,22 @@ document.getElementById('increasecps').addEventListener("click", function() {
 	  cps = cps + 2150;
 	  document.getElementById('increasecps').innerHTML = '$' + buy2amount;
   }
+ });
+ setInterval(function() {
+if(autoclicker == true) {
+	money = money + addamount;
+	
+}
+ }, 40);
+ document.getElementById('autoclicker').addEventListener("click", function(){
+	 if(autoclicker == true) {
+
+	 } else {
+  if(money > 100000000 - 1) {
+	  autoclicker = true;
+    	 	document.getElementById('autoclicker').innerHTML = 'bought';
+  }
+	 }
  });
   </script>
 </html>
