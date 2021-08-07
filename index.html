@@ -14,6 +14,7 @@
 		  <img src='https://Cookie-Clicker.caka12.repl.co/assets/images/cookie.png' width='150px' height='150px' id='cookie'>
 		  <br>
 		  <h4 id='money'></h4>
+		  <p id='amountmore1'> </p>
 		  <br></center>
 		  <section>
 			  <center>
@@ -34,7 +35,8 @@
   </body>
   <style>
 	  body {
-		    background-color:darkblue;
+		    background-image: linear-gradient(90deg, #2d546b 25%, #34698a 25%, #34698a 50%, #2d546b 50%, #2d546b 75%, #34698a 75%, #34698a 100%);
+background-size: 132.00px 132.00px;
 			color:white;
 			font-family: "Arial Black", Gadget, sans-serif;
 font-size: 25px;
@@ -106,6 +108,12 @@ audioo.play();
 }, 331000)
 setInterval(function() {
 money = money + cps;
+if(cps > 0) {
+	document.getElementById('amountmore1').innerHTML = '+' + cps;
+	setTimeout(function(){
+ document.getElementById('amountmore1').innerHTML = `‏‏‎ ‎`;
+	}, 700);
+}
 }, 1000)
 document.getElementById("increaseclick").addEventListener("click", function() {
  if(money > buy1amount - 1) {
