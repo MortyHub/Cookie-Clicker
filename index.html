@@ -10,6 +10,7 @@
   </head>
   <body>
 	  <center>
+		  <p id='amountmore'>‏‏‎ ‎</p>
 		  <img src='https://Cookie-Clicker.caka12.repl.co/assets/images/cookie.png' width='150px' height='150px' id='cookie'>
 		  <br>
 		  <h4 id='money'></h4>
@@ -73,7 +74,10 @@ text-transform: none;
 	position:relative;
 	top:1px;
 }
-
+#cookie:hover {
+ width:200px;
+ height:200px;
+}
         
   </style>
   <script>
@@ -90,6 +94,11 @@ audiooi.play();
 }, 1);
 document.getElementById("cookie").addEventListener("click", function() {
  money = money + addamount;
+ document.getElementById('amountmore').innerHTML = `+${addamount}`;
+ setTimeout(function(){
+ document.getElementById('amountmore').innerHTML = `‏‏‎ ‎`;
+
+ }, 500);
 });
 setInterval(function(){
 var audioo = new Audio('assets/music/background.mp3');
