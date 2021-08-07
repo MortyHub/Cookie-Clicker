@@ -10,9 +10,109 @@
   </head>
   <body>
 	  <center>
-		  <img src='/assets/images/cookie.png' width='150px' height='150px'>
-	  </center>
+		  <img src='/assets/images/cookie.png' width='150px' height='150px' id='cookie'>
+		  <br>
+		  <h4 id='money'></h4>
+		  <br></center>
+		  <section>
+			  <center>
+			  <h1>Shop</h1>
+			  <br>
+			  <br>
+			  <h4>Increase CPC (clicks per click)</h4>
+			  <button id='increaseclick' class='myButton'>$50</button>
+			  <br>
+			  <h4>Increase CPS (Click Per Second)</h4>
+			  <button class='myButton' id='increasecps'>$10000</button>
+			  <br>
+			  <h1>More Coming Soon...</h1>
+			  <br>
+			  </center>
+			  </section>
     <script src="script.js"></script>
   </body>
-  <style></style>
+  <style>
+	  body {
+		    background-color:darkblue;
+			color:white;
+			font-family: "Arial Black", Gadget, sans-serif;
+font-size: 25px;
+letter-spacing: -0.6px;
+word-spacing: 2px;
+font-weight: 700;
+text-decoration: none solid rgb(68, 68, 68);
+font-style: normal;
+font-variant: normal;
+text-transform: none;
+	  }
+	  section {
+		  background-color:#121212;
+		  color:white;
+		  width:100%;
+		  border-radius:60px;
+	  }
+	  .myButton {
+		  font-family: "Arial Black", Gadget, sans-serif;
+	background-color:#45b8c7;
+	border-radius:10px;
+	border:3px solid #1c56e8;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:21px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:-3px 1px 14px #7609f2;
+}
+.myButton:hover {
+	font-family: "Arial Black", Gadget, sans-serif;
+	background-color:#0f9fff;
+}
+.myButton:active {
+	font-family: "Arial Black", Gadget, sans-serif;
+	position:relative;
+	top:1px;
+}
+
+        
+  </style>
+  <script>
+	  
+	  var money = 0;
+	  var addamount = 1;
+	  var buy1amount = 50;
+	  var buy2amount = 10000;
+	  var cps = 0;
+	  var audiooi = new Audio('assets/music/background.mp3');
+audiooi.play();
+	  setInterval(function(){ 
+	document.getElementById('money').innerHTML = money;
+}, 1);
+document.getElementById("cookie").addEventListener("click", function() {
+ money = money + addamount;
+});
+setInterval(function(){
+var audioo = new Audio('assets/music/background.mp3');
+audioo.play();
+}, 331000)
+setInterval(function() {
+money = money + cps;
+}, 1000)
+document.getElementById("increaseclick").addEventListener("click", function() {
+ if(money > buy1amount - 1) {
+	 money = money - buy1amount;
+	 buy1amount = buy1amount + 1000;
+	 	document.getElementById('increaseclick').innerHTML = '$' + buy1amount;
+		 addamount = addamount + 10;
+ }
+});
+document.getElementById('increasecps').addEventListener("click", function() {
+  if(money > buy2amount - 1) {
+	  money = money - buy2amount;
+	  buy2amount = buy2amount + 100000;
+	  cps = cps + 2150;
+	  document.getElementById('increasecps').innerHTML = '$' + buy2amount;
+  }
+ });
+  </script>
 </html>

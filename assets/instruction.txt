@@ -1,0 +1,1 @@
+Open index.html and wait for it to load then you are all set.
