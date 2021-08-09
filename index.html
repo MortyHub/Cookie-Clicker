@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>
-   Cookie Clicker
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>
+		Cookie Clicker
 	</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-	  <center>
-		  <p id='amountmore'>‏‏‎ ‎</p>
-		  <img src='https://Cookie-Clicker.caka12.repl.co/assets/images/cookie.png' width='150px' height='150px' id='cookie'>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<center>
+		<p id='amountmore'>‏‏‎ ‎</p>
+		<img src='https://Cookie-Clicker.caka12.repl.co/assets/images/cookie.png' width='200px' height='200px' id='cookie'>
 		  <br>
 		  <h4 id='money'></h4>
 		  <p id='amountmore1'> </p>
@@ -30,6 +32,14 @@
 			  <h4>Auto Clicker</h4>
 			  <button class='myButton' id='autoclicker'>$100000000</button>
 			  <br>
+			  <h4>Auto Upgrade</h4>
+			  <button class='myButton' id='autoupgrade'>$500000</button>
+			  <center><select onchange='Change();' id='selectBox'>
+				  <option>None</option>
+           <option value='CPC'>Clicks Per Click</option>
+		   <option value='CPS'>Clicks Per Second</option>
+		   <br>
+                 </select></center>
 			  </center>
 			  </section>
     <script src="script.js"></script>
@@ -78,10 +88,14 @@ text-transform: none;
 	top:1px;
 }
 #cookie:hover {
- width:200px;
- height:200px;
+ width:250px;
+ height:250px;
 }
-        
+#selectBox {
+  width:80%;
+  color:white;
+  background-color:#121212;	
+} 
   </style>
   <script>
 	  
@@ -91,6 +105,8 @@ text-transform: none;
 	  var buy2amount = 10000;
 	  var cps = 0;
 	  var autoclicker = false;
+	  var autoupgrade = false;
+	  var autoupgradethong = '';
 	  var audiooi = new Audio('assets/music/background.mp3');
 audiooi.play();
 	  setInterval(function(){ 
@@ -149,5 +165,49 @@ if(autoclicker == true) {
   }
 	 }
  });
+ document.getElementById('autoupgrade').addEventListener("click", function(){
+if(money > 500000 - 1) {
+	if(autoupgrade == true) {
+
+	} else {
+ autoupgrade = true;
+ money = money - 500000;
+  document.getElementById('autoupgrade').innerHTML = `‏‏‎bought`;
+	}
+}
+ });
+ function Change() {
+	 var selectBox = document.getElementById("selectBox");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+	if(selectedValue == 'CPC') {
+		autoupgradethong = 'CPC';
+	} else {
+		if(selectedValue == 'CPS') {
+	autoupgradethong = 'CPS';
+		}
+	}
+ }
+ 
+ setInterval(function(){
+  if(autoupgrade == true) {
+    if(autoupgradethong == 'CPC') {
+     if(money > buy1amount - 1) {
+		  money = money - buy1amount;
+	 buy1amount = buy1amount + 1000;
+	 	document.getElementById('increaseclick').innerHTML = '$' + buy1amount;
+		 addamount = addamount + 10;
+	 }
+	}  else {
+		if(autoupgradethong == 'CPS') {
+			if(money > buy2amount - 1) {
+				money = money - buy2amount;
+	  buy2amount = buy2amount + 100000;
+	  cps = cps + 2150;
+	  document.getElementById('increasecps').innerHTML = '$' + buy2amount;
+			}
+		}
+	}
+  }
+ }, 100);
   </script>
 </html>
