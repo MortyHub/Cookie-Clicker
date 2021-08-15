@@ -42,22 +42,60 @@
                  </select></center>
 			  </center>
 			  </section>
-			  <br><br>
+			  <!--
+			  <center><section class='gem' id='gemm'>
+           <center><img src='/assets/images/gem.png' height='100px' width='120px' id='gemm'></center>
+<br>
+		   <center><h4 id='gemtext' id='gemm'>Unlock for 10000000 Cookies</h4></center>
+			  </section></center>
+			  <center><section class='orb' id='orbb'>
+           <center><img src='/assets/images/orb.png' height='100px' width='100px'></center>
+		   <br>
+		   <center><h4 id='orbtext'>Unlock for 100000 Orbs</h4></center>
+			  </section></center>
+			  <br><br><br><br><br><br><br><br> -->
 			  <div>
-
                 <section class='goal'>
 
                  <center><h2>Goal</h2></center>
 				 <h5 id='requiredcookies'>‏‏‎ ‎</h5>
-				 <h5 id='requiredgems'>‏‏‎ ‎</h5>
-				 <h5 id='requiredorbs'>‏‏‎ ‎</h5>
+				<!-- <h5 id='requiredgems'>‏‏‎ ‎</h5>
+				 <h5 id='requiredorbs'>‏‏‎ ‎</h5> -->
                  
+<br>
+<center><button class='myButton' onclick='finish()'>Unlock Ending</button></center>
 				</section>
 
 			  </div>
     <script src="script.js"></script>
   </body>
   <style>
+	  .orb {
+		  width:48%;
+		  float:right;
+		  border: 9px solid #2723CC;
+border-radius: 40px;
+	  }
+	  .orb:hover {
+		  width:48%;
+		  float:right;
+		  border: 9px solid #2723CC;
+border-radius: 40px;
+background-color:#00008B;
+	  }
+	  .gem:hover {
+		   width:48%;
+		  float:left;
+		  border: 9px solid #2723CC;
+border-radius: 40px;
+background-color:#00008B;
+	  }
+	  .gem {
+		  width:48%;
+		  float:left;
+		  border: 9px solid #2723CC;
+border-radius: 40px;
+	  }
 	  .goal {
 		  background-color:black;
 		  border: 9px solid #2E2E2E;
@@ -131,6 +169,8 @@ text-transform: none;
 	  var money = 0;
 	  var gems = 0;
 	  var orbs = 0;
+	  var hasorb = false;
+	  var hasgems = false;
 	  var addamount = 1;
 	  var buy1amount = 50;
 	  var buy2amount = 10000;
@@ -247,6 +287,27 @@ if(money > 500000 - 1) {
  }, 100);
  setInterval(function(){
    document.getElementById('requiredcookies').innerHTML = 'Cookies: ' + money + '/1000000000';
- }, 1)
+  //document.getElementById('requiredgems').innerHTML = 'Gems: ' + gems + '/1000000';
+  //document.getElementById('requiredorbs').innerHTML = 'Orbs: ' + orbs + '/1000';
+ }, 1);
+ /*document.getElementById("gemm").addEventListener("click", function() {
+		if(hasgems = true) {
+
+		} else {
+			if(money > 10000000 - 1) {
+	 money = money - 10000000;
+	 	document.getElementById('gemtext').innerHTML = 'bought';
+		 
+ }
+ }
+});*/
+function finish() {
+	if(money > 1000000000 - 1) {
+		alert('ending coming soon..');
+		money = money - 1000000000;
+	} else {
+
+	}
+}
   </script>
 </html>
