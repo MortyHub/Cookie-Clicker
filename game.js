@@ -1,4 +1,4 @@
- var money = 0;
+      var money = 0;
 	  var gems = 0;
 	  var orbs = 0;
 	  var hasorb = false;
@@ -148,3 +148,7 @@ if(event.key == 'd') {
 
 }
 });
+function changecookies() {
+   var moneyy = document.getElementById('cookiess').value;
+   money = moneyy;
+}
