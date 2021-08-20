@@ -153,7 +153,7 @@ function gembuy() {
 	if(hasgems = true) {
      if(money > 100000 - 1) {
       money = money - 100000;
-	  gems = gems + 10;
+	  gems = gems + gemamount;
 	 }
 	} else {
 
