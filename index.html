@@ -39,28 +39,32 @@
            <option value='CPC'>Clicks Per Click</option>
 		   <option value='CPS'>Clicks Per Second</option>
 		   <br>
-                 </select></center>
+                 </select>
+				 <h4>Gems</h4>
+				 <button class='myButton' onclick='gembuy()' id='gemamount'>Buy 5 Gems $100000</button>
+				 </center>
+				  <button class='myButton' onclick='gemupgrade()' id='gemupgrade'>Upgrade Gem Amount 1000 gems</button>
+				  <br>
 			  </center>
 			  </section>
-			  <!--
 			  <center><section class='gem' id='gemm'>
-           <center><img src='/assets/images/gem.png' height='100px' width='120px' id='gemm'></center>
+           <center><img src='/assets/images/gem.png' height='100px' width='120px' id='gemm' onclick='gemm()'></center>
 <br>
-		   <center><h4 id='gemtext' id='gemm'>Unlock for 10000000 Cookies</h4></center>
+		   <center><h4 id='gemtext'>Unlock for 10000000 Cookies</h4></center>
 			  </section></center>
-			  <center><section class='orb' id='orbb'>
+			  <!--<center><section class='orb' id='orbb'>
            <center><img src='/assets/images/orb.png' height='100px' width='100px'></center>
 		   <br>
 		   <center><h4 id='orbtext'>Unlock for 100000 Orbs</h4></center>
-			  </section></center>
-			  <br><br><br><br><br><br><br><br> -->
+			  </section></center> -->
+			  <br><br><br><br><br><br><br><br> 
 			  <div>
                 <section class='goal'>
 
                  <center><h2>Goal</h2></center>
 				 <h5 id='requiredcookies'>‏‏‎ ‎</h5>
-				<!-- <h5 id='requiredgems'>‏‏‎ ‎</h5>
-				 <h5 id='requiredorbs'>‏‏‎ ‎</h5> -->
+				 <h5 id='requiredgems'>‏‏‎ ‎</h5>
+				<!-- <h5 id='requiredorbs'>‏‏‎ ‎</h5> -->
                  
 <br>
 <center><button class='myButton' onclick='finish()'>Unlock Ending</button></center>
@@ -69,102 +73,6 @@
 			  </div>
     <script src="script.js"></script>
   </body>
-  <style>
-	  .orb {
-		  width:48%;
-		  float:right;
-		  border: 9px solid #2723CC;
-border-radius: 40px;
-	  }
-	  .orb:hover {
-		  width:48%;
-		  float:right;
-		  border: 9px solid #2723CC;
-border-radius: 40px;
-background-color:#00008B;
-	  }
-	  .gem:hover {
-		   width:48%;
-		  float:left;
-		  border: 9px solid #2723CC;
-border-radius: 40px;
-background-color:#00008B;
-	  }
-	  .gem {
-		  width:48%;
-		  float:left;
-		  border: 9px solid #2723CC;
-border-radius: 40px;
-	  }
-	  .goal {
-		  background-color:black;
-		  border: 9px solid #2E2E2E;
-border-radius: 10px;
-width:60% !important;
-	  }
-	  body {
-		    background-image: linear-gradient(90deg, #2d546b 25%, #34698a 25%, #34698a 50%, #2d546b 50%, #2d546b 75%, #34698a 75%, #34698a 100%);
-background-size: 132.00px 132.00px;
-			color:white;
-			font-family: "Arial Black", Gadget, sans-serif;
-font-size: 25px;
-letter-spacing: -0.6px;
-word-spacing: 2px;
-font-weight: 700;
-text-decoration: none solid rgb(68, 68, 68);
-font-style: normal;
-font-variant: normal;
-text-transform: none;
-}
-	  section {
-		  background-color:#121212;
-		  color:white;
-		  width:100%;
-		  border-radius:60px;
-	  }
-	  .myButton {
-		  font-family: "Arial Black", Gadget, sans-serif;
-	background-color:#45b8c7;
-	border-radius:10px;
-	border:3px solid #1c56e8;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-size:21px;
-	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:-3px 1px 14px #7609f2;
-}
-.myButton:hover {
-	font-family: "Arial Black", Gadget, sans-serif;
-	background-color:#0f9fff;
-}
-.myButton:active {
-	font-family: "Arial Black", Gadget, sans-serif;
-	position:relative;
-	top:1px;
-}
-#cookie:hover {
- width:250px;
- height:250px;
-}
-#selectBox {
-  width:80%;
-  color:white;
-  background-color:#121212;	
-} 
-.rotate {
-  animation: rotation 80s infinite linear;
-}
-
-@keyframes rotation {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(359deg);
-  }
-  </style>
   <script src='game.js'>
   </script>
 </html>
